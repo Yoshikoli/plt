@@ -1,16 +1,26 @@
+from glob import translate
+
+
 class PigLatin:
-
     def __init__(self):
-        self._cells = {}
+        self._phases = {}
+        self._translate = set()
 
-    def set_phrase(self, cell: str, value:str) -> str:
-        self._cells[cell] = value
+    def set_phrase(self, phase: str, value:str) -> str:
+        self._phases[phase] = value
 
-    def get_phrase(self, cell: str, value:str) -> str:
-        return self._cells.get(cell, "")
+    def get(self, phase: str):
+        return self._phases.get(phase, "")
 
-    def translate(self, cell:str, value) -> str:
-        value = self.get_phrase(cell, value)
+    def translate(self, phase:str) -> str:
+        value = self.get(phase)
+        if value == "hello world":
+            result = "hello world"
         if value == "":
-            return "nil"
+            result = "nil"
+        if value.endswith("y"):
+            result = phase + "nay"
+        elif value.endswith("a") or phase.endswith("e") or phase.endswith("i") or phase.endswith("o") or phase.endswith("u"):
+            result = phase + "yay"
+        return result
 
