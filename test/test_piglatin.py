@@ -18,3 +18,9 @@ class TestPigLatin(unittest.TestCase):
         piglatin.translate("anynay", "any")
         piglatin.translate("appleyay", "apple")
         piglatin.translate("askay", "ask")
+
+    def test_translating_a_word_starting_with_a_single_consonant(self):
+        piglatin = PigLatin()
+        piglatin.translate("ellohay", "hello")
+
+
