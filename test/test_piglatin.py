@@ -26,3 +26,8 @@ class TestPigLatin(unittest.TestCase):
     def test_translating_a_word_starting_with_more_consonants(self):
         piglatin = PigLatin()
         piglatin.translate("ownknay", "known")
+
+    def test_translating_a_phrase_containing_more_words(self):
+        piglatin = PigLatin()
+        piglatin.translate("ellohay orldway", "hello world")
+        piglatin.translate("ellway-eingbay", "well-being")
