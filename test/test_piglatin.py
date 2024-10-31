@@ -12,4 +12,9 @@ class TestPigLatin(unittest.TestCase):
     def test_translate_an_empty_phase(self):
         piglatin = PigLatin()
         piglatin.translate("nil", "")
-        pass
+
+    def test_translate_a_word_starting_with_vowel(self):
+        piglatin = PigLatin()
+        piglatin.translate("anynay", "any")
+        piglatin.translate("appleyay", "apple")
+        piglatin.translate("askay", "ask")
