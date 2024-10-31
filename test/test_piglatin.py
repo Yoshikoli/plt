@@ -9,3 +9,7 @@ class TestPigLatin(unittest.TestCase):
         piglatin = PigLatin()
         piglatin.get_phrase("hello world", "hello world")
 
+    def test_translate_an_empty_phase(self):
+        piglatin = PigLatin()
+        piglatin.translate("nil", "")
+        pass
